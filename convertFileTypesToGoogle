@@ -1,0 +1,4 @@
+var idfile='.....'
+var xBlob = xFile.getBlob()
+var newFile = {title : 'filexlsx', parent : [{id: folderId}]} ;
+var file = Drive.Files.insert(newFile, xBlob, {convert: true}) ;
