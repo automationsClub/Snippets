@@ -1,0 +1,2 @@
+let inputConfig = input.config();
+let response = await fetch('WEBHOOK?recordID='+ inputConfig.recordId);
