@@ -1,5 +1,3 @@
-```
 let table = base.getTable("Scripts");
 let record = await input.recordAsync('Pick a record', table);
 let response = await fetch('WEBHOOK?recordID='+ record.getCellValue("recordID"));
-```
