@@ -1,2 +1,9 @@
-let inputConfig = input.config();
-let response = await fetch('WEBHOOK?recordID='+ inputConfig.recordId);
+let inputConfig = input.config(); // Pulling all the input variables so they can be used in the script 
+let response = await fetch(
+    "https://hook.integromat.com/XXXXXXXX", // Change the URL to your webhook's URL
+    {
+        method: "POST",
+        headers: {"content-type": "application/json"},
+        body: JSON.stringify(inputConfig)
+    }
+);
