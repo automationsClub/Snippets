@@ -1,0 +1,6 @@
+function sortTimestampedRecords() {
+  var sheet = SpreadsheetApp.getActiveSheet();
+  sheet.setFrozenRows(1)
+  var range = sheet.getDataRange();
+  range.sort({column: 4, ascending: false});
+}
