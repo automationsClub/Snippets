@@ -1,0 +1,1 @@
+'https://wa.me/'&PHONE_FIELD&'?text='&ENCODE_URL_COMPONENT(CONTENT_FIELD)

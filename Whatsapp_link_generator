@@ -1,1 +1,0 @@
-'[https://wa.me/'&PHONE&'?text='&ENCODE\_URL\_COMPONENT(CONTENT)](https://wa.me/'&phone&'?text='&ENCODE_URL_COMPONENT(scripts))
