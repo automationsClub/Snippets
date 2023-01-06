@@ -1,0 +1,19 @@
+// query for all the records in a table
+let table = base.getTable("שהיות");
+// Fields to get in query
+let queryResult = await table.selectRecordsAsync({
+    fields: ["rooms", "email", "Name (from Customers)"]
+});
+
+// Creating array
+let array = [];
+// Loop through query results, filtering records and pushing objects to the array
+for (let record of queryResult.records) {
+    if(record.getCellValueAsString("rooms") === "1") {
+        array.push({
+            "customer": record.getCellValueAsString("Name (from Customers)"),
+            "email": record.getCellValueAsString("email")
+        })
+    }
+}
+console.log(array);
