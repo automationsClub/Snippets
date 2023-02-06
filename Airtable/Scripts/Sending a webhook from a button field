@@ -12,28 +12,28 @@ let table = base.getTable("TABLE NAME");
 // Change <YOUR_WEBHOOK_URL> to your webhook's URL
 let webhookUrl = "YOUR_WEBHOOK_URL";
 
-
-
-let inputConfig = input.config();
-console.log(inputConfig);
-let queryResult = await table.selectRecordsAsync({});
-console.log(queryResult);
-
-let record = queryResult.getRecord(inputConfig.recordID);
+// Get the record from button clik
+let record = await input.recordAsync('Pick a record', table);
 console.log(record);
 
+// Create the reccord object
 let recordObject = {};
 for (let i = 0; i < table.fields.length; i++) {
-    recordObject[table.fields[i].name] = record.getCellValueAsString(table.fields[i].name)
+    recordObject[table.fields[i].name] = record.getCellValueAsString(table.fields[i].name);
 }
+recordObject["Record ID"] = record.id
 console.log(recordObject);
 
+// Sending the record object to the webhook
 let response = await fetch(
     webhookUrl, {
         method: "POST",
         headers: {
             "content-type": "application/json"
         },
+        body: JSON.stringify(recordObject)
+    }
+);        },
         body: JSON.stringify(recordObject)
     }
 );
