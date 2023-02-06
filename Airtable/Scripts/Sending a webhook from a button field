@@ -19,7 +19,7 @@ console.log(record);
 // Create the reccord object
 let recordObject = {};
 for (let i = 0; i < table.fields.length; i++) {
-    recordObject[table.fields[i].name] = record.getCellValueAsString(table.fields[i].name);
+    recordObject[table.fields[i].name] = record.getCellValue(table.fields[i].name);
 }
 recordObject["Record ID"] = record.id
 console.log(recordObject);
