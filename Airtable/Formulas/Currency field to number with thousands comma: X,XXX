@@ -1,0 +1,1 @@
+IF(LEN(Price&"")>3,LEFT(Price&"",LEN(Price&"")-3)&","&RIGHT(Price&"",3),Price&"")
