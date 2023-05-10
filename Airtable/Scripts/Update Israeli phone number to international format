@@ -13,14 +13,15 @@ let table = base.getTable("TABLE_NAME");
 let phoneCulomn = "PHONE_CULOMN_NAME";
 
 let inputConfig = input.config();
-console.log("recordID: " + inputConfig.recordID);
+console.log("Record ID: " + inputConfig.recordID);
+
 let queryResult = await table.selectRecordsAsync({});
 let record = queryResult.getRecord(inputConfig.recordID);
-console.log("phoneCulomnValue: " + record.getCellValue(phoneCulomn));
+console.log("Phone culomn value: " + record.getCellValue(phoneCulomn));
 
 let oldPhone = record.getCellValue(phoneCulomn);
-let newPhone = "+972" + oldPhone.substring(1,oldPhone.length);
-console.log("newPhone: " + newPhone);
+let newPhone = "+972" + oldPhone.replace(/-/g, "").substring(1,oldPhone.length);
+console.log("New phone: " + newPhone);
 
 let params = {}
 params[phoneCulomn] = newPhone;
