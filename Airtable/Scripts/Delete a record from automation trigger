@@ -6,8 +6,8 @@ You will need the record ID as input variable (left side of the scripting window
 Copy all the script below and make sure to change the table name as explained in the next note.
 */
 
-// Change <TABLE NAME> to the name of your table
-let table = base.getTable("TABLE NAME");
+// Change <TABLE_NAME> to the name of your table
+let table = base.getTable("TABLE_NAME");
 
 let inputConfig = input.config();
 await table.deleteRecordAsync(inputConfig.recordId);
