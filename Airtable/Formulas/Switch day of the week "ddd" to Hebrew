@@ -1,0 +1,10 @@
+SWITCH({ddd},
+  "Sun", "ראשון",
+  "Mon", "שני",
+  "Tue", "שלישי",
+  "Wed", "רביעי",
+  "Thu", "חמישי",
+  "Fri", "שישי",
+  "Sat", "שבת",
+  "Invalid day of the week"
+)
