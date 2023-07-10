@@ -2,7 +2,6 @@
 This script is meant to be used in order to send a record coming from an Automation trigger, to a webhook.
 In order to use it you will need to set an Airtable automation and get a record from the trigger.
 As an action choose "run a script"
-You will need the record ID as input variable (left side of the scripting window) named: "recordID" 
 Copy all the script below and make sure to change the table name ans webhook URL as explained in the next 4 lines.
 */
 
